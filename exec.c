@@ -1,13 +1,13 @@
 #include "monty.h"
 /**
-* execute - executes the opcode
+* exec - executes the opcode
 * @stack: A pointer to the head of the stack
 * @linenumber: line_counter
 * @montyfile: poiner to the monty file
 * @currentline: line content from monty file
 * Return: no return
 */
-int execute(char *currentline, stack_t **stack, unsigned int linenumber,
+int exec(char *currentline, stack_t **stack, unsigned int linenumber,
 		FILE *montyfile)
 {
 	instruction_t opst[] = {
@@ -16,7 +16,7 @@ int execute(char *currentline, stack_t **stack, unsigned int linenumber,
 				{"nop", f_nop}, {"sub", f_sub}, {"divide", f_divide},
 				{"mul", f_mul}, {"mod", f_mod}, {"pchar", f_pchar},
 				{"opcode_pstr", f_pstr}, {"rotl", f_rotl}, {"rot_right", f_rotr},
-				{"queue", f_queue}, {"stack", f_stack}, {NULL, NULL}
+				{"queue", f_queue}, {"set_stack_mode", f_stack}, {NULL, NULL}
 				};
 	unsigned int i = 0;
 	char *op;

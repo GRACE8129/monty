@@ -1,11 +1,11 @@
 #include "monty.h"
 /**
- * f_add - adds the top two elements of the stack.
+ * f_addition - adds the top two elements of the stack.
  * @head: A pointer to the head of the stack
  * @linenumber: line_number
  * Return: no return
 */
-void f_add(stack_t **head, unsigned int linenumber)
+void f_addition(stack_t **head, unsigned int linenumber)
 {
 	stack_t *current;
 	int len = 0, sum;
