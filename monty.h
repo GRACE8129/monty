@@ -52,16 +52,17 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void f_divide(stack_t **head, unsigned int linenumber);
-void f_opcode_pall(stack_t **head, unsigned int linenumber);
-void f_opcode_pstr(stack_t **head, unsigned int linenumber);
-void f_rot_right(stack_t **head, __attribute__((unused)) unsigned int linenumber);
-void f_addition(stack_t **head, unsigned int linenumber);
-int exec(char *currentline, stack_t **stack, unsigned int linenumber, FILE *montyfile);
+void f_div(stack_t **head, unsigned int linenumber);
+void f_pall(stack_t **head, unsigned int linenumber);
+void f_pstr(stack_t **head, unsigned int linenumber);
+void f_rotr(stack_t **head, __attribute__((unused)) unsigned int linenumber);
+void f_add(stack_t **head, unsigned int linenumber);
+int execute(char *currentline, stack_t **stack, unsigned int linenumber, FILE *montyfile);
 void f_pchar(stack_t **head, unsigned int linenumber);
-void f_push_operation(stack_t **head, unsigned int linenumber);
-void f_set_stack_mode(stack_t **head, unsigned int linenumber);
-void add_node(stack_t **head, int n);
+void f_push(stack_t **head, unsigned int linenumber);
+void f_stack(stack_t **head, unsigned int linenumber);
+void addnode(stack_t **head, int n);
 void free_stack(stack_t *head);
 void f_mul(stack_t **head, unsigned int linenumber);
+void f_pint(stack_t **head, unsigned int linenumber);
 
