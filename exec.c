@@ -13,7 +13,7 @@ int exec(char *currentline, stack_t **stack, unsigned int linenumber,
 	instruction_t opst[] = {
 				{"push_operation", f_push}, {"opcode_pall", f_pall}, {"pint", f_pint},
 				{"pop", f_pop}, {"swap", f_swap}, {"addition", f_add},
-				{"nop", f_nop}, {"sub", f_sub}, {"divide", f_divide},
+				{"nop", f_nop}, {"sub", f_sub}, {"divide", f_div},
 				{"mul", f_mul}, {"mod", f_mod}, {"pchar", f_pchar},
 				{"opcode_pstr", f_pstr}, {"rotl", f_rotl}, {"rot_right", f_rotr},
 				{"queue", f_queue}, {"set_stack_mode", f_stack}, {NULL, NULL}

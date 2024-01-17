@@ -11,9 +11,10 @@ int main(int argc, char *argv[])
 	char *currentline;
 	FILE *montyfile;
 	size_t buffersize = 0;
-	ssize_t bytesRead = 1;
+	ssize_t bytesread = 1;
 	stack_t *stack = NULL;
 	unsigned int linenumber = 0;
+
 	/* check for correct number of command-line arguments*/
 	if (argc != 2)
 	{
@@ -29,13 +30,13 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 	/*read and execute monty code line by line*/
-	while (bytesRead > 0)
+	while (bytesread > 0)
 	{
 		currentline = NULL;
-		bytesRead = getline(&currentline, &buffersize, montyfile);
+		bytesread = getline(&currentline, &buffersize, montyfile);
 		bus.currentline = currentline;
 		linenumber++;
-		if (bytesRead > 0)
+		if (bytesread > 0)
 		{
 			execute(currentline, &stack, linenumber, montyfile);
 		}

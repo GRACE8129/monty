@@ -22,7 +22,7 @@ void f_sub(stack_t **head, unsigned int linenumber)
 		exit(EXIT_FAILURE);
 	}
 	current_node = *head;
-	sub = current_node->next->n - currrent_node->n;
+	sub = current_node->next->n - current_node->n;
 	current_node->next->n = sub;
 	*head = current_node->next;
 	free(current_node);

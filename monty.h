@@ -33,8 +33,8 @@ typedef struct stack_s
 typedef struct bus_s
 {
 	char *arg;
-	FILE *file;
-	char *content;
+	FILE *montyfile;
+	char *currentline;
 	int lifi;
 }  bus_t;
 extern bus_t bus;
@@ -51,7 +51,9 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-
+char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
+ssize_t getstdin(char **lineptr, int file);
+char  *clean_line(char *content);
 void f_div(stack_t **head, unsigned int linenumber);
 void f_pall(stack_t **head, unsigned int linenumber);
 void f_pstr(stack_t **head, unsigned int linenumber);
@@ -69,4 +71,9 @@ void f_queue(stack_t **head, unsigned int linenumber);
 void addqueue(stack_t **head, int n);
 void f_sub(stack_t **head, unsigned int linenumber);
 void f_nop(stack_t **head, unsigned int linenumber);
+void f_pop(stack_t **head, unsigned int linenumber);
+void f_swap(stack_t **head, unsigned int linenumber);
+void f_rotl(stack_t **head,  __attribute__((unused)) unsigned int linenumber);
+void f_mod(stack_t **head, unsigned int linenumber);
 
+#endif
