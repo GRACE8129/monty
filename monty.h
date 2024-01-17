@@ -65,4 +65,8 @@ void addnode(stack_t **head, int n);
 void free_stack(stack_t *head);
 void f_mul(stack_t **head, unsigned int linenumber);
 void f_pint(stack_t **head, unsigned int linenumber);
+void f_queue(stack_t **head, unsigned int linenumber);
+void addqueue(stack_t **head, int n);
+void f_sub(stack_t **head, unsigned int linenumber);
+void f_nop(stack_t **head, unsigned int linenumber);
 
