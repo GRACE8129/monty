@@ -1,31 +1,14 @@
 #include "monty.h"
 /**
- * f_pchar - prints the char at the top of the stack,
- * followed by a new line
- * @head: pointer to the head of the stack.
- * @linenumber: line_number
- * Return: no return
-*/
-void f_pchar(stack_t **head, unsigned int linenumber)
+ * pchar_error - Prints pchar error messages for empty stacks
+ *               empty stacks and non-character values.
+ * @line_number: Line number in Monty bytecodes file where error occurred.
+ * @message: The corresponding error message to print.
+ *
+ * Return: (EXIT_FAILURE) always.
+ */
+int pchar_error(unsigned int line_number, char *message)
 {
-	stack_t *h;
-
-	h = *head;
-	if (!h)
-	{
-		fprintf(stderr, "L%d: can't pchar, stack empty\n", linenumber);
-		fclose(bus.montyfile);
-		free(bus.currentline);
-		free_stack(*head);
-		exit(EXIT_FAILURE);
-	}
-	if (h->n > 127 || h->n < 0)
-	{
-		fprintf(stderr, "L%d: can't pchar, value out of range\n", linenumber);
-		fclose(bus.montyfile);
-		free(bus.currentline);
-		free_stack(*head);
-		exit(EXIT_FAILURE);
-	}
-	printf("%c\n", h->n);
+	fprintf(stderr, "L%u: can't pchar, %s\n", line_number, message);
+	return (EXIT_FAILURE);
 }

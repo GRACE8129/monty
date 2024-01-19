@@ -1,12 +1,11 @@
 #include "monty.h"
 /**
-  *f_nop- Does nothing
-  *@head: stack head
-  *@linenumber: line_number
-  *Return: no return
+ * monty_nop - Does absolutely nothing for the Monty opcode 'nop'.
+ * @stack: A pointer to the top mode node of a stack_t linked list.
+ * @line_number: The current working line number of a Monty bytecodes file.
  */
-void f_nop(stack_t **head, unsigned int linenumber)
+void monty_nop(stack_t **stack, unsigned int line_number)
 {
-	(void) linenumber;
-	(void) head;
+	(void)stack;
+	(void)line_number;
 }
