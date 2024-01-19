@@ -1,3 +1,4 @@
+#define  _POSIX_C_SOURCE 200809L
 #ifndef MONTY_H
 #define MONTY_H
 #include <stdio.h>
@@ -53,7 +54,7 @@ typedef struct instruction_s
 } instruction_t;
 char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
 ssize_t getstdin(char **lineptr, int file);
-char  *clean_line(char *content);
+char  *clean_line(char *currentline);
 void f_div(stack_t **head, unsigned int linenumber);
 void f_pall(stack_t **head, unsigned int linenumber);
 void f_pstr(stack_t **head, unsigned int linenumber);
